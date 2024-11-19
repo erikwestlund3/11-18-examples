@@ -15,8 +15,18 @@
 //   "Hello World";
 // One way to do it but it's too much code
 
+import Form from "./components/form";
 import H2 from "./components/h2";
 
 const app = document.getElementById("app");
 
 app.innerHTML = H2("Hello World!");
+app.innerHTML += Form();
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (formSubmissionEvent) => {
+  formSubmissionEvent.preventDefault();
+
+  console.log("formSubmissionEvent".target.text.value);
+});
